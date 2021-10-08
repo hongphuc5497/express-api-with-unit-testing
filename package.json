@@ -1,0 +1,12 @@
+{
+  "name": "express-api-unit-testing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Hong Phuc <hongphuc.dthp@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.6.5"
+  }
+}
