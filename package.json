@@ -14,8 +14,21 @@
 		"sequelize": "^6.6.5"
 	},
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"test": "cross-env NODE_ENV=test jest --testTimeout=10000 --watch --detectOpenHandles",
+		"pretest": "cross-env NODE_ENV=test yarn db:reset",
 		"start": "nodemon server.js",
+		"db:create:test": "cross-env NODE_ENV=test sequelize db:create",
 		"db:reset": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all"
+	},
+	"jest": {
+		"testEnvironment": "node",
+		"coveragePathIgnorePatterns": [
+			"/node_modules/"
+		]
+	},
+	"devDependencies": {
+		"cross-env": "^7.0.3",
+		"jest": "^27.2.5",
+		"supertest": "^6.1.6"
 	}
 }
